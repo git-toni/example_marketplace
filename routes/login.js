@@ -7,9 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  // An example of a very sophisticated user authentication code ;)
   var user = db.find(x => x.name === req.body.username);
   if(!user) {
-    // req.flash('error', 'Username and password are incorrect');
+    console.warn("User not found.");
     res.redirect('/login');
   }
   if(req.body.password === "pass") {
@@ -18,7 +19,7 @@ router.post('/', function(req, res, next) {
     res.redirect('/');
   }
   else {
-    // req.flash('error', 'Username and password are incorrect');
+    console.warn("Incorrect password.");
     res.redirect('/login');
   }
 });
