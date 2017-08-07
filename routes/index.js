@@ -3,6 +3,7 @@ var router = express.Router();
 var auth = require("../auth");
 var db = require("../db");
 
+// Feel free to add more data.
 router.get('/', auth.checkAuth, function(req, res, next) {
   var users = db;
   var meId = req.session.meId;
