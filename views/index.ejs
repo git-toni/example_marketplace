@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TalkJS marketplace</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>Welcome to our marketplace!</p>
+    <p>Here is the list of users you can talk to!</p>
+    <ul>
+      <% users.forEach(function(user){ %>
+          <li><a href="#" onclick="chatWith('<%= user.id %>', '<%= user.name %>');"><%= user.name %></a></li>
+      <%  }); %>
+    </ul>
+  </body>
+  <script>
+    // Integrate TalkJS here
+    // Your current user id is in <%= meId %>
+    // Your current user object is in <%= me %>
+  </script>
+  <script>
+    // Please implement "starting a chat" with someone
+    // Users are in <%= users %>
+    function chatWith(userId, userName) {
+      debugger;
+    }
+  </script>
+</html>
